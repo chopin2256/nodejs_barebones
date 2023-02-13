@@ -1,0 +1,4 @@
+package-lock.json
+node_modules
+src_typescript_compiled
+public/js/app.js

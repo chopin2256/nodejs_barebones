@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "compounds": [
+        {
+            "name": "Run All",
+            "configurations": [
+                "Tasks",
+                "Backend",
+                "Frontend"
+            ]
+        }
+    ],
+    "configurations": [
+        {
+            "name": "Frontend",
+            "type": "chrome",
+            //"type": "firefox",
+            "request": "launch",
+            "url": "http://localhost:8080/",
+            "webRoot": "${workspaceFolder}\\public"
+        },
+        {
+            "name": "Backend",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/src_backend/app.ts",
+            "outFiles": [
+                "${workspaceFolder}/src_typescript_compiled/**/*.js"
+            ],
+            "preLaunchTask": "tsc: build - tsconfig.json",
+            "internalConsoleOptions": "openOnSessionStart",
+            "console": "internalConsole"
+        },
+        {
+            "name": "Tasks",            
+            "type": "node",
+            "request": "attach",           
+            "preLaunchTask": "All Tasks"
+        },
+    ]
+}
